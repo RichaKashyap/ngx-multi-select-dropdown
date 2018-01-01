@@ -1,0 +1,55 @@
+﻿<div class="multi-select-dropdown">
+    <div class="dropdown-toggle-section" (click)="toggle()">
+        <div class="dropdown-toggle-section-content">
+            <div *ngIf="singleSelection && selectedItem">
+                <div *ngIf="type == 'Object'">
+                    {{selectedItem.name}}
+                </div>
+                <div [hidden]="type == 'Object'">
+                    <label>{{selectedItem}}</label>
+                </div>
+            </div>
+            <div *ngIf="!singleSelection && selectedItems && selectedItems.length > 0">
+                <div class="selected-items-count">{{selectedItems.length}} &nbsp;Selected</div>
+            </div>
+            <div *ngIf="!isSelectedItemNotEmpty()">Select</div>
+        </div>
+        <div class="dropdown-toggle-section-icon">
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+    <div *ngIf="isOpen" class="dropdown-menu-section">
+        <div *ngIf="enableSearch" class="dropdown-menu-search-section">
+            <input class="option-search-bar" 
+                   type="text" 
+                   [(ngModel)]="searchText" 
+                   placeholder="Search..." 
+                   (change)="search()"/>
+            <div class="clear-search-btn" 
+                 (click)="clearSearch()">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+        <div class="dropdown-menu-list-section">
+            <div *ngIf="filteredOptions && filteredOptions.length > 0">
+                <div *ngFor="let option of filteredOptions">
+                    <div class="dropdown-menu-item" (click)="singleSelection? selectAndToggleDropdown(option): undefined">
+                        <input *ngIf="!singleSelection" 
+                               type="checkbox" 
+                               [checked]="isSelected(option)" 
+                               (change)="toggleSelection($event, option)" />
+                        <div class="dropdown-menu-item-name" *ngIf="type == 'Object'" >
+                            <label>{{option.name}}</label>
+                        </div>
+                        <div class="dropdown-menu-item-name" [hidden]="type == 'Object'">
+                            <label>{{option}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="filteredOptions.length == 0">
+                No Result found
+            </div>
+        </div>
+    </div>
+</div>
