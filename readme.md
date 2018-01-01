@@ -18,18 +18,22 @@ ts-<br/>
 options = [<br/>
     {
         id: 1,
-        name: "Option 1"
+        name: "Option1",
+        displayName: 'Option 1
+
     },
     {
         id: 2,
-        name: "Option 2"
+        name: "Option2",
+        displayName: "Option 2"
     }
 ]<br/>
 
 selectedItems = [
     {
         id: 1,
-        name: "Option 1"
+        name: "Option1",
+        displayName: "Option 1"
     }
 ]<br/>
 
@@ -39,6 +43,7 @@ html-<br/>
     <multi-select-dropdown 
         [options]="options" 
         [selectedItems]="selectedItems" 
+        [displayName]="'displayName'"
         (onSelect)="select()"
         (onUnselect)="unSelect()">
     </multi-select-dropdown><br/>
@@ -51,7 +56,8 @@ html-<br/>
     selectedItem -  Keeps Selected Item when Single Selection
     enableSearch - Enable or Disable search(By default true);
     singleSelection - Enable Single Selection(By default false);
+    displayName - Name of the attribute to which is keeping the value to show in List(User friendly)(By default 'name')
     type - Type of items("Object" or "Simple") <br/>
 
-    If you have any suggestion, please let me know
+    If you have any suggestion or issues, you are welcome to post in issues.
     
