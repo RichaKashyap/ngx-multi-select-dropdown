@@ -1,4 +1,4 @@
-<h1>Project Title</h1><br />
+<h1>Ngx-Multi-Select-Dropdown</h1><br />
 Are you struggling to find proper multiselect dropdown with checkbox and search Functionality added? If yes, This package is for you.
 
 <h1>Installing</h1> <br/>
