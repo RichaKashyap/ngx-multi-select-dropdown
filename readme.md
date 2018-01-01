@@ -59,5 +59,6 @@ html-<br/>
     displayName - Name of the attribute to which is keeping the value to show in List(User friendly)(By default 'name')
     type - Type of items("Object" or "Simple") <br/>
 
-    If you have any suggestion or issues, you are welcome to post in issues.
+    If you have any suggestion or issues, you are very welcome to post it [here](https://github.com/RichaKashyap/ngx-multi-select-dropdown/issues)
+
     
